@@ -112,16 +112,16 @@ using namespace std;
 //     parent[v]=u;
 //     sz[u]+=sz[v];
 // }
-vector<bool> vis(1000001,0);
-vector<int> g[1000001];
-void graph(vector<int> g[],int e,bool t){
-    fo(i,e){
-        int u,v; cin>>u>>v;
-        g[u].pb(v);
-        if(!t)
-        g[v].pb(u);
-    }
-}
+// vector<bool> vis(1000001,0);
+// vector<int> g[1000001];
+// void graph(vector<int> g[],int e,bool t){
+//     fo(i,e){
+//         int u,v; cin>>u>>v;
+//         g[u].pb(v);
+//         if(!t)
+//         g[v].pb(u);
+//     }
+// }
 // int up[200001][20];
 // int build_sparse(int node,int par){
 //     up[node][0]=par;//2^0=1st parent
@@ -143,22 +143,12 @@ void graph(vector<int> g[],int e,bool t){
 //     }
 // }
 signed main(){
-    // freopen("input.txt", "r", stdin);
-	// freopen("output.txt", "w", stdout);
-    // #ifndef ONLINE_JUDGE
-    // if (fopen("input.txt", "r"))
-    // {
-    //     freopen("input.txt", "r", stdin);
-    //     freopen("output.txt", "w", stdout);
-    // }
-    // #endif
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    tc(T){
-        int a,b,c,r;cin>>a>>b>>c>>r;
-        int L=max(min(a,b),c-r);
-        int R=min(max(a,b),c+r);
-        cout << max(a,b)-min(a,b)-max(0,R-L)<<"\n";
-    }
+    int n; cin>>n;
+    sfarr(a,n);
+    sort(a,a+n);
+    fo(i,n)
+    cout<<a[i]<<" ";
 return 0;
 }

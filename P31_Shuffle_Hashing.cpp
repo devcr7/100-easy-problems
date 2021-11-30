@@ -155,10 +155,25 @@ signed main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     tc(T){
-        int a,b,c,r;cin>>a>>b>>c>>r;
-        int L=max(min(a,b),c-r);
-        int R=min(max(a,b),c+r);
-        cout << max(a,b)-min(a,b)-max(0,R-L)<<"\n";
+        string p,h; cin>>p>>h;
+        sort(all(p));
+        int n=p.length(),m=h.length();
+        if(n>m)
+        no;
+        else{
+           int d=m-n;
+           bool b=1;
+           fo(i,d+1){
+               string s=h.substr(i,n);
+               sort(all(s));
+               if(s==p){
+                   yes;
+                   b=0;
+                   break;
+               }
+           }
+           if(b) no;
+        }
     }
 return 0;
 }
